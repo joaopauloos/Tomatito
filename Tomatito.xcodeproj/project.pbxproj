@@ -50,6 +50,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CADE4623091585F00F969CD /* Build configuration list for PBXNativeTarget "Tomatito" */;
 			buildPhases = (
+				6CADE46F309165F300F969CD /* ShellScript */,
 				6CADE4533091585E00F969CD /* Sources */,
 				6CADE4543091585E00F969CD /* Frameworks */,
 				6CADE4553091585E00F969CD /* Resources */,
@@ -105,6 +106,24 @@
 			);
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CADE46F309165F300F969CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			shellPath = /bin/sh;
+			shellScript = (
+				"export PATH=\"$PATH:/opt/homebrew/bin:/usr/local/bin\"",
+				"",
+				"if command -v swiftformat >/dev/null 2>&1; then",
+				"  swiftformat \"$SRCROOT\"",
+				"else",
+				"  echo \"warning: SwiftFormat não foi encontrado no PATH\"",
+				"fi",
+				"",
+			);
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6CADE4533091585E00F969CD /* Sources */ = {
@@ -242,6 +261,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -273,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
